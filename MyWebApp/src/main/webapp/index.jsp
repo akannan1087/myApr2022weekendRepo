@@ -1,5 +1,5 @@
 <html>
 <body>
-<h2>Hi everyone, Welcome to Azure Build Pipeline! We are migrating Java WebApp from GitHub into Azure Cloud!!!</h2>
+<h2>Hi all!! Welcome to our first CI - freestyle job using Jenkins, Tomcat, Maven and GitHib</h2>
 </body>
 </html>
