@@ -4,6 +4,6 @@
 <title>Some relevant title</title>
 </head>
 <body>
-	<h2>Fixed three defects found by Sonar, automating code quality checks!!!</h2>
+	<h2>We are integrating with Nexus and Slack from Jenkins!!!</h2>
 </body>
 </html>
