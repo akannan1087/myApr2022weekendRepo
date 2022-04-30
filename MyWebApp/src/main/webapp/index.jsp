@@ -4,6 +4,6 @@
 <title>Some relevant title</title>
 </head>
 <body>
-	<h2>We are integrating with Nexus and Slack from Jenkins!!!</h2>
+	<h2>We are creating scripted pipeline to implement CI !!!</h2>
 </body>
 </html>
