@@ -27,10 +27,12 @@ pipeline {
         }
         
         stage("Quality Gate") {
-        timeout(time: 1, unit: 'HOURS') {
-            waitForQualityGate abortPipeline: true
-          }
-        }   
+          steps{
+          timeout(time: 1, unit: 'HOURS') {
+             waitForQualityGate abortPipeline: true
+            }
+          } 
+        }
         stage ("Nexus upload") {
             steps{
             nexusArtifactUploader artifacts: [[artifactId: 'MyWebApp', classifier: '', file: 'MyWebApp/target/MyWebApp.war', type: 'war']], credentialsId: '5f169013-6b16-4418-9b86-443c2eb41581', groupId: 'com.dept.app', nexusUrl: 'ec2-3-137-200-230.us-east-2.compute.amazonaws.com:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'maven-snapshots', version: '1.0-SNAPSHOT'
