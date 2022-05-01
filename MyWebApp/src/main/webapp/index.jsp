@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<title>Some relevant title</title>
-</head>
+<html>
 <body>
-	<h2>We are creating scripted pipeline to implement CI !!!</h2>
+	<h2>We are testing quality gate in Sonarqube !!!</h2>
 </body>
 </html>
