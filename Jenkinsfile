@@ -34,7 +34,7 @@ pipeline {
 
         stage ("dev deploy") {
             steps{
-                deploy adapters: [tomcat9(credentialsId: '76638e64-a002-4c4d-9913-f707602c67b1', path: '', url: 'http://ec2-18-188-253-180.us-east-2.compute.amazonaws.com:8080/')], contextPath: null, war: '**/*.war'
+                deploy adapters: [tomcat9(credentialsId: '5ecba445-25fe-4ed7-bf36-9d15cec78cd3', path: '', url: 'http://ec2-18-188-253-180.us-east-2.compute.amazonaws.com:8080/')], contextPath: null, war: '**/*.war'
             }
         }
     
@@ -55,7 +55,7 @@ pipeline {
      
     stage ("QA deploy") {
         steps {
-        deploy adapters: [tomcat9(credentialsId: '76638e64-a002-4c4d-9913-f707602c67b1', path: '', url: 'http://ec2-18-188-253-180.us-east-2.compute.amazonaws.com:8080/')], contextPath: null, war: '**/*.war'
+        deploy adapters: [tomcat9(credentialsId: '5ecba445-25fe-4ed7-bf36-9d15cec78cd3', path: '', url: 'http://ec2-18-188-253-180.us-east-2.compute.amazonaws.com:8080/')], contextPath: null, war: '**/*.war'
      }
     }
 
@@ -76,7 +76,7 @@ pipeline {
      
     stage ("PROD deploy") {
         steps {
-        deploy adapters: [tomcat9(credentialsId: '76638e64-a002-4c4d-9913-f707602c67b1', path: '', url: 'http://ec2-18-188-253-180.us-east-2.compute.amazonaws.com:8080/')], contextPath: null, war: '**/*.war'
+        deploy adapters: [tomcat9(credentialsId: '5ecba445-25fe-4ed7-bf36-9d15cec78cd3', path: '', url: 'http://ec2-18-188-253-180.us-east-2.compute.amazonaws.com:8080/')], contextPath: null, war: '**/*.war'
       }
     }
 
