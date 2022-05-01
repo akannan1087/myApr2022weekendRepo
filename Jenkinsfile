@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkoout') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: '5dc9d166-1948-4899-8ff4-9053576f6876', url: 'https://github.com/akannan1087/myApr2022weekendRepo']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: '39a0281c-5ab6-4158-bb33-b7b1aab87117', url: 'https://github.com/akannan1087/myApr2022weekendRepo']]])
             }
         }
         
@@ -28,13 +28,13 @@ pipeline {
         
         stage ("Nexus upload") {
             steps{
-            nexusArtifactUploader artifacts: [[artifactId: 'MyWebApp', classifier: '', file: 'MyWebApp/target/MyWebApp.war', type: 'war']], credentialsId: '03405c4b-8bfd-42f6-94b5-2fcb1657b7c0', groupId: 'com.dept.app', nexusUrl: 'ec2-18-216-169-46.us-east-2.compute.amazonaws.com:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'maven-snapshots', version: '1.0-SNAPSHOT'
+            nexusArtifactUploader artifacts: [[artifactId: 'MyWebApp', classifier: '', file: 'MyWebApp/target/MyWebApp.war', type: 'war']], credentialsId: '03405c4b-8bfd-42f6-94b5-2fcb1657b7c0', groupId: 'com.dept.app', nexusUrl: 'ec2-3-137-200-230.us-east-2.compute.amazonaws.com:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'maven-snapshots', version: '1.0-SNAPSHOT'
           } 
         }
 
         stage ("dev deploy") {
             steps{
-                deploy adapters: [tomcat9(credentialsId: '76638e64-a002-4c4d-9913-f707602c67b1', path: '', url: 'http://ec2-18-117-79-118.us-east-2.compute.amazonaws.com:8080/')], contextPath: null, war: '**/*.war'
+                deploy adapters: [tomcat9(credentialsId: '76638e64-a002-4c4d-9913-f707602c67b1', path: '', url: 'http://ec2-18-188-253-180.us-east-2.compute.amazonaws.com:8080/')], contextPath: null, war: '**/*.war'
             }
         }
     
@@ -55,7 +55,7 @@ pipeline {
      
     stage ("QA deploy") {
         steps {
-        deploy adapters: [tomcat9(credentialsId: '76638e64-a002-4c4d-9913-f707602c67b1', path: '', url: 'http://ec2-18-117-79-118.us-east-2.compute.amazonaws.com:8080/')], contextPath: null, war: '**/*.war'
+        deploy adapters: [tomcat9(credentialsId: '76638e64-a002-4c4d-9913-f707602c67b1', path: '', url: 'http://ec2-18-188-253-180.us-east-2.compute.amazonaws.com:8080/')], contextPath: null, war: '**/*.war'
      }
     }
 
@@ -76,7 +76,7 @@ pipeline {
      
     stage ("PROD deploy") {
         steps {
-        deploy adapters: [tomcat9(credentialsId: '76638e64-a002-4c4d-9913-f707602c67b1', path: '', url: 'http://ec2-18-117-79-118.us-east-2.compute.amazonaws.com:8080/')], contextPath: null, war: '**/*.war'
+        deploy adapters: [tomcat9(credentialsId: '76638e64-a002-4c4d-9913-f707602c67b1', path: '', url: 'http://ec2-18-188-253-180.us-east-2.compute.amazonaws.com:8080/')], contextPath: null, war: '**/*.war'
       }
     }
 
