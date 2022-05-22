@@ -4,6 +4,6 @@
 <title>Some relevant title</title>
 </head>
 <body>
-	<h2>We are Fixing errors in the code and testing quality gate in Sonarqube !!!</h2>
+	<h2> We are building Azure Pipelines to migrate from GitHub into Azure WebApp!!!</h2>
 </body>
 </html>
